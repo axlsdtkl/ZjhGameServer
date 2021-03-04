@@ -1,0 +1,9 @@
+D:\gxq\code\c#\ZjhGameServer\MyServer\Protocol\bin\Debug\Protocol.dll
+D:\gxq\code\c#\ZjhGameServer\MyServer\Protocol\bin\Debug\Protocol.pdb
+D:\gxq\code\c#\ZjhGameServer\MyServer\Protocol\obj\Debug\Protocol.dll
+D:\gxq\code\c#\ZjhGameServer\MyServer\Protocol\obj\Debug\Protocol.pdb
+D:\gxq\code\unity\zjh\Assets\Scripts\Protocol.dll
+D:\gxq\code\unity\zjh\Assets\Scripts\Protocol.pdb
+D:\gxq\code\c#\ZjhGameServer\MyServer\Protocol\obj\Debug\Protocol.csprojAssemblyReference.cache
+C:\Users\wyt.DESKTOP-SUI0MPS\Desktop\Protocol.dll
+C:\Users\wyt.DESKTOP-SUI0MPS\Desktop\Protocol.pdb
