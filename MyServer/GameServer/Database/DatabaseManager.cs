@@ -43,6 +43,7 @@ namespace GameServer.Database
             cmd.Parameters.AddWithValue("iconName", "headIcon_"+index.ToString());
             cmd.ExecuteNonQuery();
         }
+
         //用户名和密码是否匹配
         public static bool IsMatch(string userName,string pwd)
         {
@@ -97,6 +98,15 @@ namespace GameServer.Database
             }
             reader.Close();
 
+        }
+        //修改密码
+        public static int ModifyPwd(ClientPeer client, string pwd)
+        {
+            MySqlCommand cmd = new MySqlCommand("update userinfo set Password=@pwd where Id=@id", sqlConcect);
+            cmd.Parameters.AddWithValue("id", client.Id);
+            cmd.Parameters.AddWithValue("pwd", pwd);
+            cmd.ExecuteNonQuery();
+            return 1;
         }
         //用户下线
         public static void OffLine(ClientPeer client)

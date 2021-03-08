@@ -67,7 +67,7 @@ namespace MyServer
             SendMsg(packet);
 
         }
-        private void SendMsg(byte[] packet)
+        public void SendMsg(byte[] packet)
         {
             try
             {

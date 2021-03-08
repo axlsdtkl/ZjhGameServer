@@ -23,5 +23,8 @@ namespace Protocol.Code
         public const int Logout_CREQ = 10;
         public const int Logout_SRES = 11;
 
+        public const int ModifyPwd_CREQ = 12;
+        public const int ModifyPwd_SRES = 13;
+
     }
 }

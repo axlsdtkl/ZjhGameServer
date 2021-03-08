@@ -37,6 +37,12 @@ namespace GameServer.Logic
                 case AccountCode.UpdateCoinCount_CREQ:
                     UpdateCoinCount(client,(int)value);
                     break;
+                case AccountCode.ModifyPwd_CREQ:
+                    ModifyPwd(client, value as AccountDto);
+                    break;
+                case AccountCode.Logout_CREQ:
+                    UserLogout(client);
+                    break;
                 default:
                     break;
             }
@@ -48,6 +54,15 @@ namespace GameServer.Logic
             {
                 int totalCoin=DatabaseManager.UpdateCoinCount(client.Id, coinCount);
                 client.SendMsg(OpCode.Account, AccountCode.UpdateCoinCount_SRES, totalCoin);
+            });
+        }
+        //客户端更新账号信息
+        private void ModifyPwd(ClientPeer client, AccountDto dto)
+        {
+            SingleExecute.Instance.Execute(() =>
+            {
+                int flag = DatabaseManager.ModifyPwd(client, dto.password);
+                client.SendMsg(OpCode.Account, AccountCode.ModifyPwd_SRES, flag);
             });
         }
 
@@ -69,6 +84,13 @@ namespace GameServer.Logic
                     client.SendMsg(OpCode.Account, AccountCode.GetUserInfo_SRES,dto);
 
             });
+        }
+        //用户登出
+        private void UserLogout(ClientPeer client)
+        {
+            DatabaseManager.OffLine(client);
+            client.SendMsg(OpCode.Account, AccountCode.Logout_SRES, 0);
+            return;
         }
         //客户端登录的请求
         private void Login(ClientPeer client,AccountDto dto)
