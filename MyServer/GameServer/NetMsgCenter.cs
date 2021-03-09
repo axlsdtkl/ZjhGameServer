@@ -17,6 +17,11 @@ namespace GameServer
         private MatchHandler matchHandler = new MatchHandler();
         private ChatHandler chatHandler = new ChatHandler();
         private FightHandler fightHandler = new FightHandler();
+
+        public NetMsgCenter()
+        {
+            matchHandler.startFight += fightHandler.StartFight;
+        }
         //断开连接
         public void Disconnect(ClientPeer client)
         {
@@ -28,7 +33,7 @@ namespace GameServer
         //接收消息
         public void Receive(ClientPeer client, NetMsg msg)
         {
-            switch(msg.opCode)
+            switch (msg.opCode)
             {
                 case OpCode.Account:
                     accountHandler.Receive(client, msg.subCode, msg.value);

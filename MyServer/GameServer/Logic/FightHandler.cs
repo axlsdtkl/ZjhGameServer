@@ -16,5 +16,10 @@ namespace GameServer.Logic
         public void Receive(ClientPeer client, int subCode, object value)
         {
         }
+        //开始战斗
+        public void StartFight(List<ClientPeer>clientList,int roomType)
+        {
+
+        }
     }
 }

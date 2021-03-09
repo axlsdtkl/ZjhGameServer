@@ -11,7 +11,7 @@ namespace GameServer.Cache
     public class Caches
     {
         public static List<MatchCache> matchCacheList { get; set; }
-        static void Caches()
+        static Caches()
         {
             matchCacheList = new List<MatchCache>();
             for(int i=0;i<3;i++)

@@ -95,6 +95,7 @@ namespace GameServer.Logic
         //客户端登录的请求
         private void Login(ClientPeer client,AccountDto dto)
         {
+            
             SingleExecute.Instance.Execute(() =>
             {
                 if(DatabaseManager.IsExistUserName(dto.userName)==false)

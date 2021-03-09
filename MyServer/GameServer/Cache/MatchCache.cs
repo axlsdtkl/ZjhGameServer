@@ -37,6 +37,7 @@ namespace GameServer.Cache
                 room = roomQueue.Dequeue();
             else
                 room = new MatchRoom(roomId.Add_Get());
+            room.Enter(client);
             roomIdModelDic.Add(room.roomId, room);
             userIdRoomIdDic.Add(client.Id, room.roomId);
             return room;
