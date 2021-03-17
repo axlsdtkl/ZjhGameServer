@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Protocol.Code
 {
-    //匹配的子操作码
+    /// <summary>
+    /// 匹配的子操作码
+    /// </summary>
     public class MatchCode
     {
         public const int Enter_CREQ = 0;

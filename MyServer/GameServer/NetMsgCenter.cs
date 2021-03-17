@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace GameServer
 {
-    //网络消息处理中心，分发消息到对应的模块
-    class NetMsgCenter : IApplication
+    /// <summary>
+    /// 网络消息处理中心，分发消息到对应的模块
+    /// </summary>
+    public class NetMsgCenter : IApplication
     {
         private AccountHandler accountHandler = new AccountHandler();
         private MatchHandler matchHandler = new MatchHandler();
@@ -22,7 +23,10 @@ namespace GameServer
         {
             matchHandler.startFight += fightHandler.StartFight;
         }
-        //断开连接
+        /// <summary>
+        /// 断开连接
+        /// </summary>
+        /// <param name="client"></param>
         public void Disconnect(ClientPeer client)
         {
             fightHandler.Disconnect(client);
@@ -30,7 +34,11 @@ namespace GameServer
             matchHandler.Disconnect(client);
             accountHandler.Disconnect(client);
         }
-        //接收消息
+        /// <summary>
+        /// 接收消息
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="msg"></param>
         public void Receive(ClientPeer client, NetMsg msg)
         {
             switch (msg.opCode)

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyServer
 {
+    /// <summary>
+    /// 一个要执行的方法
+    /// </summary>
     public delegate void ExecuteDelegate();
     public class SingleExecute
     {
@@ -16,7 +19,7 @@ namespace MyServer
         {
             get
             {
-                lock(ob)
+                lock (ob)
                 {
                     if (instance == null)
                     {
@@ -24,21 +27,26 @@ namespace MyServer
                     }
                     return instance;
                 }
-                
             }
         }
         private object objLock = new object();
-        //互斥锁
+
+        /// <summary>
+        /// 互斥锁
+        /// </summary>
         private Mutex mutex;
-        
+
         public SingleExecute()
         {
             mutex = new Mutex();
         }
-        //单线程执行逻辑
+        /// <summary>
+        /// 单线程执行逻辑
+        /// </summary>
+        /// <param name="executeDelegate"></param>
         public void Execute(ExecuteDelegate executeDelegate)
         {
-            lock(objLock)
+            lock (objLock)
             {
                 mutex.WaitOne();
                 executeDelegate();

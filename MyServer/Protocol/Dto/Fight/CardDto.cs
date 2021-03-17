@@ -9,15 +9,15 @@ namespace Protocol.Dto.Fight
     [Serializable]
     public class CardDto
     {
-        public string cardName;
-        public int weight;
-        public int color;
+        public string CardName { get; set; }
+        public int Weight { get; set; }
+        public int Color { get; set; }
 
         public CardDto(string cardName,int weight,int color)
         {
-            this.cardName = cardName;
-            this.weight = weight;
-            this.color = color;
+            this.CardName = cardName;
+            this.Weight = weight;
+            this.Color = color;
         }
     }
 }

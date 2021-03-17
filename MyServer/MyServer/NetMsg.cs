@@ -6,27 +6,36 @@ using System.Threading.Tasks;
 
 namespace MyServer
 {
-    //网络消息类
-    //作用:每次发送消息都发送这个类，接收到消息后需要转换成这个类
+    /// <summary>
+    /// 网络消息类
+    /// 作用：每次发送消息都发送这个类，接收到消息后需要转换成这个类
+    /// </summary>
     public class NetMsg
     {
-        //操作码
+        /// <summary>
+        /// 操作码
+        /// </summary>
         public int opCode { get; set; }
-        //子操作码
+        /// <summary>
+        /// 子操作码
+        /// </summary>
         public int subCode { get; set; }
-        //传递的参数
+        /// <summary>
+        /// 传递的参数
+        /// </summary>
         public object value { get; set; }
+
         public NetMsg()
         {
 
         }
-        public NetMsg(int opCode,int subCode,object value)
+        public NetMsg(int opCode, int subCode, object value)
         {
             this.opCode = opCode;
             this.subCode = subCode;
             this.value = value;
         }
-        public void Change(int opCode,int subCode,object value)
+        public void Change(int opCode, int subCode, object value)
         {
             this.opCode = opCode;
             this.subCode = subCode;

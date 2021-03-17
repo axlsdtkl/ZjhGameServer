@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyServer
 {
-    //线程安全的整型
+    /// <summary>
+    /// 线程安全的整型
+    /// </summary>
     public class ThreadSafeInt
     {
         private int value;
@@ -14,28 +16,37 @@ namespace MyServer
         {
             this.value = value;
         }
-        //增加并获取
+        /// <summary>
+        /// 增加并获取
+        /// </summary>
+        /// <returns></returns>
         public int Add_Get()
         {
-            lock(this)
+            lock (this)
             {
                 value++;
                 return value;
             }
         }
-        //减少并获取
+        /// <summary>
+        /// 减少并获取
+        /// </summary>
+        /// <returns></returns>
         public int Reduce_Get()
         {
-            lock(this)
+            lock (this)
             {
                 value--;
                 return value;
             }
         }
-        //获取
+        /// <summary>
+        /// 获取
+        /// </summary>
+        /// <returns></returns>
         public int Get()
         {
-            lock(this)
+            lock (this)
             {
                 return value;
             }

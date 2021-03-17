@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace GameServer.Cache.Fight
 {
-    //回合管理类
+    /// <summary>
+    /// 回合管理类
+    /// </summary>
     public class RoundModel
     {
-        //当前下注的玩家
+        /// <summary>
+        /// 当前下注的玩家
+        /// </summary>
         public int CurrentStakesUserId { get; set; }
+
         public RoundModel()
         {
             CurrentStakesUserId = -1;
@@ -19,13 +24,19 @@ namespace GameServer.Cache.Fight
         {
             CurrentStakesUserId = -1;
         }
-        //开始下注
+        /// <summary>
+        /// 开始下注
+        /// </summary>
+        /// <param name="userId"></param>
         public void Start(int userId)
         {
             CurrentStakesUserId = userId;
         }
-        //轮换下注
-        public void Trun(int userId)
+        /// <summary>
+        /// 轮换下注
+        /// </summary>
+        /// <param name="userId"></param>
+        public void Turn(int userId)
         {
             CurrentStakesUserId = userId;
         }

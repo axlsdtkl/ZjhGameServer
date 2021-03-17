@@ -7,7 +7,9 @@ using System.Text;
 
 namespace Protocol.Dto
 {
-    //玩家传输模型
+    /// <summary>
+    /// 玩家传输模型
+    /// </summary>
     [Serializable]
     public class PlayerDto
     {
@@ -18,7 +20,7 @@ namespace Protocol.Dto
         public List<CardDto> cardList;//自己的手牌
         public CardType cardType;
 
-        public PlayerDto(int userId,string userName)
+        public PlayerDto(int userId, string userName)
         {
             this.userId = userId;
             this.userName = userName;
@@ -26,14 +28,19 @@ namespace Protocol.Dto
             identity = Identity.Normal;
             cardList = new List<CardDto>();
             cardType = CardType.None;
-
         }
-        //添加卡牌
+        /// <summary>
+        /// 添加卡牌
+        /// </summary>
+        /// <param name="dto"></param>
         public void AddCard(CardDto dto)
         {
             cardList.Add(dto);
         }
-        //移除卡牌
+        /// <summary>
+        /// 移除卡牌
+        /// </summary>
+        /// <param name="dto"></param>
         public void RemoveCard(CardDto dto)
         {
             cardList.Remove(dto);

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace GameServer.Cache.Fight
 {
-    //牌库
+    /// <summary>
+    /// 牌库
+    /// </summary>
     public class CardLibrary
     {
         private Queue<CardDto> cardQueue = new Queue<CardDto>();
@@ -26,26 +28,31 @@ namespace GameServer.Cache.Fight
             //洗牌
             Shuffle();
         }
-        //初始化牌
+        /// <summary>
+        /// 初始化牌
+        /// </summary>
         private void InitCard()
         {
-            //先清空队列
+            //清空队列
             cardQueue.Clear();
-            for(int color=0;color<=3;color++)
+
+            for (int color = 0; color <= 3; color++)
             {
-                for(int weight=2;weight<=14;weight++)
+                for (int weight = 2; weight <= 14; weight++)
                 {
                     string cardName = "card_" + color + "_" + weight;
-
                     CardDto dto = new CardDto(cardName, weight, color);
                     cardQueue.Enqueue(dto);
                 }
             }
         }
-        //洗牌
+        /// <summary>
+        /// 洗牌
+        /// </summary>
         private void Shuffle()
         {
             List<CardDto> cardList = cardQueue.ToList<CardDto>();
+
             Random ran = new Random();
             for (int i = 0; i < cardList.Count; i++)
             {
@@ -61,10 +68,13 @@ namespace GameServer.Cache.Fight
                 cardQueue.Enqueue(card);
             }
         }
-        //出牌
+        /// <summary>
+        /// 出牌
+        /// </summary>
+        /// <returns></returns>
         public CardDto DealCard()
         {
-            if(cardQueue.Count<9)
+            if (cardQueue.Count < 9)
             {
                 //初始化牌
                 InitCard();

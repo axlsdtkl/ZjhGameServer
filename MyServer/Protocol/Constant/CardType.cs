@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Protocol.Constant
 {
-    //手牌类型
+    /// <summary>
+    /// 手牌类型
+    /// </summary>
     public enum CardType
     {
         None,

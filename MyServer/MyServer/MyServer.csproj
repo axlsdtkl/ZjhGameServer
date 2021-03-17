@@ -50,6 +50,8 @@
     <Compile Include="ServerPeer.cs" />
     <Compile Include="SingleExecute.cs" />
     <Compile Include="ThreadSafeInt.cs" />
+    <Compile Include="TimerTool\TimerManager.cs" />
+    <Compile Include="TimerTool\TimerModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

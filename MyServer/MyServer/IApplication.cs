@@ -8,9 +8,16 @@ namespace MyServer
 {
     public interface IApplication
     {
-        //断开连接
+        /// <summary>
+        /// 断开连接
+        /// </summary>
+        /// <param name="client"></param>
         void Disconnect(ClientPeer client);
-        //接收数据
+        /// <summary>
+        /// 接收数据
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="msg"></param>
         void Receive(ClientPeer client, NetMsg msg);
     }
 }

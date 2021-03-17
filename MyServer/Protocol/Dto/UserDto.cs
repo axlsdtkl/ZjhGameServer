@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Protocol.Dto
 {
-    //用户信息传输模型
+    /// <summary>
+    /// 用户信息传输模型
+    /// </summary>
     [Serializable]
     public class UserDto
     {

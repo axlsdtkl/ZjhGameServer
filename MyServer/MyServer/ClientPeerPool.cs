@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyServer
 {
-    //客户端对象连接池
+    /// <summary>
+    /// 客户端对象连接池
+    /// </summary>
     public class ClientPeerPool
     {
         private Queue<ClientPeer> clientPeerQueue;
+
         public ClientPeerPool(int maxCount)
         {
             clientPeerQueue = new Queue<ClientPeer>(maxCount);
@@ -21,7 +24,6 @@ namespace MyServer
         public ClientPeer Dequeue()
         {
             return clientPeerQueue.Dequeue();
-
         }
     }
 }

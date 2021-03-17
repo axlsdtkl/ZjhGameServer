@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Protocol.Dto
 {
-    //账号传输模型
+    /// <summary>
+    /// 账号传输模型
+    /// </summary>
     [Serializable]
     public class AccountDto
     {
